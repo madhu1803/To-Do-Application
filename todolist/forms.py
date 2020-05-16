@@ -21,6 +21,7 @@ class TaskListForm(forms.ModelForm):
         model = TaskList
         fields = ["name"]
 
+
 # ---------      Register Form   --------- #
 class RegisterForm(forms.ModelForm):
     """Post form to handle post creation"""
