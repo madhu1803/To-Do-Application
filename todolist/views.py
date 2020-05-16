@@ -108,6 +108,7 @@ class TaskDeleteView(LoginRequiredMixin, DeleteView):
 
 
 class RegistrationView(CreateView):
+    """View for user registration."""
     form_class = RegisterForm
     template_name = "account/register.html"
     success_url = "/"

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 from todolist.models import TaskList, Task
 
-
+# ---------      Task Form   --------- #
 class TaskForm(forms.ModelForm):
     """Post form to handle post creation"""
 
@@ -13,6 +13,7 @@ class TaskForm(forms.ModelForm):
         fields = ["title", "content", "created", "due_date", "belongs_to"]
 
 
+# ---------      Task List Form   --------- #
 class TaskListForm(forms.ModelForm):
     """Post form to handle post creation"""
 
@@ -20,7 +21,7 @@ class TaskListForm(forms.ModelForm):
         model = TaskList
         fields = ["name"]
 
-
+# ---------      Register Form   --------- #
 class RegisterForm(forms.ModelForm):
     """Post form to handle post creation"""
 
@@ -29,6 +30,7 @@ class RegisterForm(forms.ModelForm):
         fields = ["username", "first_name", "last_name", "email", "password"]
 
 
+# ---------      Login  Form   --------- #
 class LoginForm(forms.ModelForm):
     """Login form for the user."""
 
