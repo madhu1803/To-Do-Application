@@ -1,0 +1,42 @@
+{% extends "task/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+
+
+</style>
+<!--main-->
+<h1>task list</h1>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-12 mt-3 ">
+            {% for task in object_list %}
+            <div class="card mb-4 ">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-3">{{ task.name }}</h2>
+                      <h2 class="card-title text-center mb-3">{{ task.created_By }}</h2>
+                      <a class="btn btn-success mt-3" href="{% url 'tasklist_detail' task.pk  %}">view</a>
+                      <a class="btn btn-success mt-3" href="{% url 'tasklist_update' task.pk  %}">Update</a>
+                    <a class="btn btn-success mt-3" href="{% url 'tasklist_delete' task.pk  %}">delete</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
